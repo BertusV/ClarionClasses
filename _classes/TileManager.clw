@@ -32,7 +32,7 @@ TileManager.Init                PROCEDURE(WindowManager pWM, BYTE pLightenOnHove
 TileManager.AddButtonMimic PROCEDURE(SIGNED pButtonFEQ, LONG pColor, <BYTE pLightenOnHoverPercentage>, <BYTE pPadding>)
   CODE
   SELF.tileQ.buttonFEQ = pButtonFEQ
-  SELF.tileQ.Tile     &= New(ButtonTile)
+  SELF.tileQ.Tile     &= New(TileButton)
   SELF.tileQ.Tile.isToggleTile = SELF.enableToggleSet
   IF SELF.enableToggleSet AND SELF.currentToggleChoice = 0
     SELF.currentToggleChoice = pButtonFEQ

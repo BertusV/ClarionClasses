@@ -1,9 +1,11 @@
+!ABCIncludeFile
+
   INCLUDE('BaseWindowComponent.inc'),ONCE
-  INCLUDE('ButtonTile.inc'),ONCE
+  INCLUDE('TileButton.inc'),ONCE
 
 tileManagerQ_type    QUEUE,TYPE
-buttonFEQ                 SIGNED ! This is not really necessary since the buttonFEQ is also stored in the ButtonTile class but it is a convenient redundancy
-Tile                      &ButtonTile
+buttonFEQ                 SIGNED ! This is not really necessary since the buttonFEQ is also stored in the TileButton class but it is a convenient redundancy
+Tile                      &TileButton
               END
 
 TM_CURSOR:SIZEALL            EQUATE('<0FFH,01H,87H,7FH>')
