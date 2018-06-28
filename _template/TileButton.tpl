@@ -35,12 +35,12 @@
 #EndSheet
 
 #! Declare Local data
-#AT (%DataSection,''),Priority(8500)
+#AT (%DataSection,''),where(%DisableTB=0),Priority(8500)
      #Call(%TileButtonLocalData)
 #EndAt
 
      
-#AT (%WindowManagerMethodCodeSection,'Init'),Priority(8010)
+#AT (%WindowManagerMethodCodeSection,'Init'),where(%DisableTB=0),Priority(8010)
 #Call(%TileButtonInitiate)
 #FOR(%TileButtons)
      #Call(%TileButtonAssignment)
