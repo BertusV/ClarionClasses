@@ -30,17 +30,18 @@
 #Boxed('Tile Button')
   #Prompt('Tile Manager object name',@S25),%TileManager,DEFAULT('Tiles'),REQ
   #Prompt('Tile Buttons',Control),%TileButtons,Multi('Tile Buttons'),REQ
+  #Prompt('Disable Tile Button in this Procedure',Check),%DisableTBP,AT(10)
 #EndBoxed
 #EndTab
 #EndSheet
 
 #! Declare Local data
-#AT (%DataSection,''),where(%DisableTB=0),Priority(8500)
+#AT (%DataSection,''),where(%DisableTB=0 AND %DisableTBP=0),Priority(8500)
      #Call(%TileButtonLocalData)
 #EndAt
 
      
-#AT (%WindowManagerMethodCodeSection,'Init'),where(%DisableTB=0),Priority(8010)
+#AT (%WindowManagerMethodCodeSection,'Init'),where(%DisableTB=0 AND %DisableTBP=0),Priority(8010)
 #Call(%TileButtonInitiate)
 #FOR(%TileButtons)
      #Call(%TileButtonAssignment)
